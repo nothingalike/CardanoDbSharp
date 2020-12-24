@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <Authors>Kyle Johns</Authors>
+    <Company />
+    <Description>This library will interface into cardano-sync-db postgres database.</Description>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>https://github.com/nothingalike/CardanoDbSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nothingalike/CardanoDbSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cardano</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="Dapper.FluentMap" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Npgsql" Version="5.0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+
+</Project>
