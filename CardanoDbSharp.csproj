@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/nothingalike/CardanoDbSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cardano</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
