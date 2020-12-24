@@ -5,14 +5,19 @@ using System.Collections.Generic;
 
 namespace CardanoDbSharp.Models
 {
-    public partial class PoolOwner
+    public partial class PoolMetaDatum
     {
+        public PoolMetaDatum()
+        {
+            PoolUpdates = new HashSet<PoolUpdate>();
+        }
+
         public long Id { get; set; }
+        public string Url { get; set; }
         public byte[] Hash { get; set; }
-        public long PoolHashId { get; set; }
         public long RegisteredTxId { get; set; }
 
-        public virtual PoolHash PoolHash { get; set; }
         public virtual Tx RegisteredTx { get; set; }
+        public virtual ICollection<PoolUpdate> PoolUpdates { get; set; }
     }
 }

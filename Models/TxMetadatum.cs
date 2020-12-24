@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace CardanoDbSharp.Models
 {
-    public class Withdrawal
+    public partial class TxMetadatum
     {
         public long Id { get; set; }
-        public long AddrId { get; set; }
-        public decimal Amount { get; set; }
+        public decimal Key { get; set; }
+        public string Json { get; set; }
         public long TxId { get; set; }
+        public byte[] Bytes { get; set; }
 
-        public virtual StakeAddress Addr { get; set; }
         public virtual Tx Tx { get; set; }
     }
 }
