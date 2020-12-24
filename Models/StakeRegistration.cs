@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace CardanoDbSharp.Models
 {
+    [Table("public.stake_registration")]
     public partial class StakeRegistration
     {
         public long Id { get; set; }

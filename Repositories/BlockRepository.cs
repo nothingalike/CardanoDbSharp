@@ -20,17 +20,16 @@ namespace CardanoDbSharp.Repositories
 
         public async Task<Block> GetByIdAsync(int id)
         {
-            using(var conn = Connection)
+            using(var conn = GetConnection)
             {
-                conn.Open();
-
                 try
                 {
+                    conn.Open();
                     return await conn.GetAsync<Block>(id);
-                }catch(Exception e)
+                }
+                catch (Exception e)
                 {
-                    var x = 0;
-                    return null;
+                    throw new Exception(e.Message, e);
                 }
             }
         }

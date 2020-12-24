@@ -18,6 +18,6 @@ namespace CardanoDbSharp.Repositories
             _configuration = configuration;
         }
 
-        protected IDbConnection Connection => new NpgsqlConnection(_configuration.GetConnectionString("CardanoDbSync"));
+        protected IDbConnection GetConnection => new NpgsqlConnection(_configuration.GetConnectionString("CardanoDbSync"));
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace CardanoDbSharp.Models
 {
+    [Table("public.tx_out")]
     public partial class TxOut
     {
         public TxOut()

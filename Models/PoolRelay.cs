@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace CardanoDbSharp.Models
 {
+    [Table("public.pool_relay")]
     public partial class PoolRelay
     {
         public long Id { get; set; }

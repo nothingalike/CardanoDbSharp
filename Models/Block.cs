@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace CardanoDbSharp.Models
 {
+    [Table("public.block")]
     public partial class Block
     {
         public Block()
@@ -17,13 +19,14 @@ namespace CardanoDbSharp.Models
         }
 
         public long Id { get; set; }
-        public byte[] Hash { get; set; }
+        public string Hash { get; set; }
         public int? EpochNo { get; set; }
         public int? SlotNo { get; set; }
         public int? EpochSlotNo { get; set; }
         public int? BlockNo { get; set; }
         public long? PreviousId { get; set; }
         public byte[] MerkelRoot { get; set; }
+        public string MerkelRootStr => BitConverter.ToString(MerkelRoot).ToLower().Replace("-", "");
         public long SlotLeaderId { get; set; }
         public int Size { get; set; }
         public DateTime Time { get; set; }
@@ -32,6 +35,7 @@ namespace CardanoDbSharp.Models
         public int ProtoMinor { get; set; }
         public string VrfKey { get; set; }
         public byte[] OpCert { get; set; }
+        public string OpCertStr => BitConverter.ToString(OpCert).ToLower().Replace("-", "");
 
         public virtual Block Previous { get; set; }
         public virtual SlotLeader SlotLeader { get; set; }

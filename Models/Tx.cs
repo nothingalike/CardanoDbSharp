@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace CardanoDbSharp.Models
 {
+    [Table("public.tx")]
     public partial class Tx
     {
         public Tx()
@@ -30,6 +32,7 @@ namespace CardanoDbSharp.Models
 
         public long Id { get; set; }
         public byte[] Hash { get; set; }
+        public string HashStr => BitConverter.ToString(Hash).ToLower().Replace("-", "");
         public long BlockId { get; set; }
         public int BlockIndex { get; set; }
         public decimal OutSum { get; set; }
@@ -38,6 +41,7 @@ namespace CardanoDbSharp.Models
         public int Size { get; set; }
         public decimal? InvalidBefore { get; set; }
         public decimal? InvalidHereafter { get; set; }
+        
 
         public virtual Block Block { get; set; }
         public virtual ICollection<Delegation> Delegations { get; set; }
