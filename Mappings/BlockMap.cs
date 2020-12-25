@@ -16,9 +16,9 @@ namespace CardanoDbSharp.Mappings
             Map(p => p.TxCount).ToColumn("tx_count");
             Map(p => p.ProtoMajor).ToColumn("proto_major");
             Map(p => p.ProtoMinor).ToColumn("proto_minor");
-            //Map(p => p.MerkelRoot).ToColumn("merkel_root");
+            Map(p => p.MerkelRoot).ToColumn("merkel_root");
             Map(p => p.VrfKey).ToColumn("vrf_key");
-            //Map(p => p.OpCert).ToColumn("op_cert");
+            Map(p => p.OpCert).ToColumn("op_cert");
         }
     }
 }
