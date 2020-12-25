@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardanoDbSharp.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CardanoDbSharp.Models
 {
-    [Table("public.tx_metadata")]
+    [Table(TableNames.TxMetadatum)]
     public partial class TxMetadatum
     {
         public long Id { get; set; }

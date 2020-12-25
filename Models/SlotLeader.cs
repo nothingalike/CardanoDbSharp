@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardanoDbSharp.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CardanoDbSharp.Models
 {
-    [Table("public.slot_leader")]
+    [Table(TableNames.SlotLeader)]
     public partial class SlotLeader
     {
         public SlotLeader()

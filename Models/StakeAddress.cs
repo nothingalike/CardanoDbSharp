@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardanoDbSharp.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CardanoDbSharp.Models
 {
-    [Table("public.stake_address")]
+    [Table(TableNames.StakeAddress)]
     public partial class StakeAddress
     {
         public StakeAddress()
