@@ -1,5 +1,6 @@
 ﻿using CardanoDbSharp.Common;
 using CardanoDbSharp.Models;
+using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using System;

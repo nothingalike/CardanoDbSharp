@@ -20,7 +20,8 @@ namespace CardanoDbSharp.Models
         }
 
         public long Id { get; set; }
-        public string Hash { get; set; }
+        public byte[] Hash { get; set; }
+        public string HashStr => BitConverter.ToString(Hash).ToLower().Replace("-", "");
         public int? EpochNo { get; set; }
         public int? SlotNo { get; set; }
         public int? EpochSlotNo { get; set; }

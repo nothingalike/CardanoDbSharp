@@ -21,7 +21,7 @@ namespace CardanoDbSharp.Repositories
     public abstract class Repository<T>: IRepository<T>
     {
         protected readonly IConfiguration _configuration;
-        private readonly string _tableName;
+        protected readonly string _tableName;
 
         public Repository(IConfiguration configuration, string tableName)
         {
@@ -39,7 +39,7 @@ namespace CardanoDbSharp.Repositories
                 {
                     conn.Open();
                     return await conn.QuerySingleOrDefaultAsync<T>(
-                        "select * from @TableName where id = @Id",
+                        $"select * from {_tableName} where id = @Id",
                         new { 
                             TableName = _tableName,
                             Id = id 
@@ -60,8 +60,8 @@ namespace CardanoDbSharp.Repositories
                 {
                     conn.Open();
                     return await conn.QueryAsync<T>(
-                        @"select * from @TableName 
-                            order by id @Sort
+                        $@"select * from {_tableName} 
+                            order by id {sort}
                             limit @PageSize
                             offset @PageNumber",
                         new
