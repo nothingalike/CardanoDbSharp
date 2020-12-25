@@ -26,11 +26,13 @@ namespace CardanoDbSharp.Models
         public double TreasuryGrowthRate { get; set; }
         public double Decentralisation { get; set; }
         public byte[] Entropy { get; set; }
+        public string EntropyStr => BitConverter.ToString(Entropy).ToLower().Replace("-", "");
         public int ProtocolMajor { get; set; }
         public int ProtocolMinor { get; set; }
         public decimal MinUtxoValue { get; set; }
         public decimal MinPoolCost { get; set; }
         public byte[] Nonce { get; set; }
+        public string NonceStr => BitConverter.ToString(Nonce).ToLower().Replace("-", "");
         public long BlockId { get; set; }
 
         public virtual Block Block { get; set; }

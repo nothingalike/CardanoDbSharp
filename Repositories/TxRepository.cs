@@ -25,7 +25,7 @@ namespace CardanoDbSharp.Repositories
                 {
                     conn.Open();
                     return await conn.QueryFirstOrDefaultAsync<Tx>(
-                        "select * from public.tx where encode(hash, 'hex') = @HashStr",
+                        $"select * from {_tableName} where encode(hash, 'hex') = @HashStr",
                         new
                         {
                             HashStr = hashStr

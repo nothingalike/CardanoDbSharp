@@ -24,8 +24,7 @@ namespace CardanoDbSharp.Models
             StakeDeregistrations = new HashSet<StakeDeregistration>();
             StakeRegistrations = new HashSet<StakeRegistration>();
             Treasuries = new HashSet<Treasury>();
-            TxInTxInNavigations = new HashSet<TxIn>();
-            TxInTxOuts = new HashSet<TxIn>();
+            TxIns = new HashSet<TxIn>();
             TxMetadata = new HashSet<TxMetadatum>();
             TxOuts = new HashSet<TxOut>();
             Withdrawals = new HashSet<Withdrawal>();
@@ -57,8 +56,7 @@ namespace CardanoDbSharp.Models
         public virtual ICollection<StakeDeregistration> StakeDeregistrations { get; set; }
         public virtual ICollection<StakeRegistration> StakeRegistrations { get; set; }
         public virtual ICollection<Treasury> Treasuries { get; set; }
-        public virtual ICollection<TxIn> TxInTxInNavigations { get; set; }
-        public virtual ICollection<TxIn> TxInTxOuts { get; set; }
+        public virtual ICollection<TxIn> TxIns { get; set; }
         public virtual ICollection<TxMetadatum> TxMetadata { get; set; }
         public virtual ICollection<TxOut> TxOuts { get; set; }
         public virtual ICollection<Withdrawal> Withdrawals { get; set; }
